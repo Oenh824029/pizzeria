@@ -21,3 +21,5 @@ Route::get('/pizzas/{pizza}/edit',[PizzaController::class, 'edit'])->name('pizza
 
 // rutas de la vista ingredientes
 Route::get('/ingredients',[IngredientsController::class, 'index'])->name('ingredients.index');
+Route::post('/ingredients',[IngredientsController::class,'store'])->name('ingredients.store');
+Route::get('/ingredients/create',[IngredientsController::class, 'create'])->name('ingredients.create');

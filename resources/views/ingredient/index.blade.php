@@ -14,9 +14,9 @@
 
   <div class="container">
   <h1> Listado de Ingredientes </h1>
-  <!--<a href=" {{ route('pizzas.create') }} " class="btn btn-success">-->
-  <!--  <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Pizza-->
-  <!--</a>-->
+  <a href=" {{ route('ingredients.create') }} " class="btn btn-success">
+    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Pizza
+  </a>
   </div>
    
 <hr>
@@ -36,34 +36,23 @@
     </thead>
     <tbody>
 
-    @foreach($ingtedients as $ingtedients)
+    @foreach($ingredients as $ingredient)
         <tr>
             <th>
-                {{ $ingtedients->id }}
+                {{ $ingredient->id }}
             </th>
             <td>
-                {{ $ingtedients-> name }}
+                {{ $ingredient-> name }}
             </td>
             <td>
-                {{ $ingtedients->created_at }}
+                {{ $ingredient->created_at }}
             </td>
             <td>
-                {{ $ingtedients->updated_at }}
+                {{ $ingredient->updated_at }}
             </td>
 
             <td>
-             <!--   <a href=" {{ route('pizzas.edit', ['pizza' => $ingtedients->id]) }} "  -->
-             <!--   class="btn btn-info"> -->
-             <!--   <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button> -->
-             <!--   </a> -->
-             <!--   <form action=" {{ route('pizzas.destroy',['pizza'=>$ingtedients->id]) }} " -->
-             <!--   method="POST" style="display: inline-block"> -->
-             <!--   @method('delete') -->
-             <!--   @csrf -->
-                <!--<input type="submit" class="btn btn-danger" value="delete">-->
-             <!--   <button type="submit" class="btn btn-danger"> -->
-             <!--       <img src=" {{ asset('icons/delete.png') }}" alt="delete" width="26" height="26"> </button> -->
-             <!--   </form> -->
+            
             </td>
         </tr>    
 
@@ -73,7 +62,7 @@
 
     <!-- paginador de la tabla, muestra de a 10 registros se agrega en el metodo index -->
     <div class="d-flex justify-content-center mt-4">
-    {{ $ingtedients->links() }}
+    {{ $ingredients->links() }}
     </div>
     <!-- fin paginador -->
 </div>

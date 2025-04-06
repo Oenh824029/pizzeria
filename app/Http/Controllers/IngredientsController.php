@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ingredients;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,8 +14,8 @@ class IngredientsController extends Controller
     public function index()
     {
         //
-        $ingtedients = Ingredients::paginate(10);
-        return view('ingredient.index',['ingtedients'=>$ingtedients]);
+        $ingredients = Ingredient::paginate(10);
+        return view('ingredient.index',['ingredients'=>$ingredients]);
 
     }
 
@@ -24,7 +24,11 @@ class IngredientsController extends Controller
      */
     public function create()
     {
-        //
+          //
+          $ingredients = DB::table('ingredients')
+          ->orderBy('name')
+          ->get();
+      return view('ingredient.new', ['ingredients' => $ingredients]);
     }
 
     /**
@@ -33,6 +37,15 @@ class IngredientsController extends Controller
     public function store(Request $request)
     {
         //
+        $ingredient = new Ingredient();
+        $ingredient->name = $request->name;
+        $ingredient->id = $request->id;
+        $ingredient->save();
+
+        $ingredients = Ingredient::select('ingredients.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+           return view('ingredient.index',['ingredients'=>$ingredients]);
     }
 
     /**
