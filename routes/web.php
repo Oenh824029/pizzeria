@@ -14,3 +14,4 @@ Route::get('/', function () {
 Route::get('/pizzas',[PizzaController::class, 'index'])->name('pizzas.index');
 Route::post('/pizzas',[PizzaController::class,'store'])->name('pizzas.store');
 Route::get('/pizzas/create',[PizzaController::class, 'create'])->name('pizzas.create');
+Route::delete('/pizzas/{pizza}',[PizzaController::class, 'destroy'])->name('pizzas.destroy');

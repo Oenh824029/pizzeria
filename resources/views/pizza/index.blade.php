@@ -50,6 +50,17 @@
             <td>
                 {{ $pizza->updated_at }}
             </td>
+
+            <td>
+                <form action=" {{ route('pizzas.destroy',['pizza'=>$pizza->id]) }} "
+                method="POST" style="display: inline-block">
+                @method('delete')
+                @csrf
+                <!--<input type="submit" class="btn btn-danger" value="delete">-->
+                <button type="submit" class="btn btn-danger">
+                    <img src=" {{ asset('icons/delete.png') }}" alt="delete" width="26" height="26"> </button>
+                </form>
+            </td>
         </tr>    
 
     @endforeach    
