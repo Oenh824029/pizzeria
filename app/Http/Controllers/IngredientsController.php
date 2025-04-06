@@ -78,5 +78,12 @@ class IngredientsController extends Controller
     public function destroy(string $id)
     {
         //
+        $ingredient = Ingredient::find($id);
+        $ingredient->delete();
+
+        $ingredients = Ingredient::select('ingredients.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('ingredient.index',['ingredients' => $ingredients]);
     }
 }

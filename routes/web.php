@@ -23,3 +23,4 @@ Route::get('/pizzas/{pizza}/edit',[PizzaController::class, 'edit'])->name('pizza
 Route::get('/ingredients',[IngredientsController::class, 'index'])->name('ingredients.index');
 Route::post('/ingredients',[IngredientsController::class,'store'])->name('ingredients.store');
 Route::get('/ingredients/create',[IngredientsController::class, 'create'])->name('ingredients.create');
+Route::delete('/ingredients/{ingredient}',[IngredientsController::class, 'destroy'])->name('ingredients.destroy');
