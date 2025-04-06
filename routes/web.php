@@ -24,3 +24,5 @@ Route::get('/ingredients',[IngredientsController::class, 'index'])->name('ingred
 Route::post('/ingredients',[IngredientsController::class,'store'])->name('ingredients.store');
 Route::get('/ingredients/create',[IngredientsController::class, 'create'])->name('ingredients.create');
 Route::delete('/ingredients/{ingredient}',[IngredientsController::class, 'destroy'])->name('ingredients.destroy');
+Route::put('/ingredients/{ingredient}',[IngredientsController::class, 'update'])->name('ingredients.update');
+Route::get('/ingredients/{ingredient}/edit',[IngredientsController::class, 'edit'])->name('ingredients.edit');

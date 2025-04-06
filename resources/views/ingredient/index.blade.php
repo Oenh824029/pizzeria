@@ -53,6 +53,10 @@
 
             <td>
 
+            <a href=" {{ route('ingredients.edit', ['ingredient' => $ingredient->id]) }} " 
+            class="btn btn-info">
+            <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+            </a>
             <form action=" {{ route('ingredients.destroy',['ingredient'=>$ingredient->id]) }} "
             method="POST" style="display: inline-block">
             @method('delete')
