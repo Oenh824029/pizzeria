@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\IngredientsController;
+use App\Http\Controllers\ExtraIngredienteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,3 +27,6 @@ Route::get('/ingredients/create',[IngredientsController::class, 'create'])->name
 Route::delete('/ingredients/{ingredient}',[IngredientsController::class, 'destroy'])->name('ingredients.destroy');
 Route::put('/ingredients/{ingredient}',[IngredientsController::class, 'update'])->name('ingredients.update');
 Route::get('/ingredients/{ingredient}/edit',[IngredientsController::class, 'edit'])->name('ingredients.edit');
+
+// rutas de extra ingredientes
+Route::get('/extra_ingredients',[ExtraIngredienteController::class, 'index'])->name('extra_ingredients.index');
