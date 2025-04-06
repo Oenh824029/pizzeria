@@ -14,6 +14,9 @@
 
   <div class="container">
   <h1> Listado de Pizzas </h1>
+  <a href=" {{ route('pizzas.create') }} " class="btn btn-success">
+    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Pizza
+  </a>
   </div>
    
 <hr>
@@ -45,13 +48,19 @@
                 {{ $pizza->created_at }}
             </td>
             <td>
-                {{ $pizza->update_at }}
+                {{ $pizza->updated_at }}
             </td>
         </tr>    
 
     @endforeach    
     </tbody>
     </table>
+
+    <!-- paginador de la tabla, muestra de a 10 registros se agrega en el metodo index -->
+    <div class="d-flex justify-content-center mt-4">
+    {{ $pizzas->links() }}
+    </div>
+    <!-- fin paginador -->
 </div>
 
 

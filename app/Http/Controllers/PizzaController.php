@@ -14,7 +14,8 @@ class PizzaController extends Controller
     public function index()
     {
         // devuelve los registros que hay en BBDD
-        $pizzas = Pizza::all();
+        //$pizzas = Pizza::all();
+        $pizzas = Pizza::paginate(10);
         return view('pizza.index',['pizzas'=>$pizzas]);
 
     }
@@ -25,6 +26,10 @@ class PizzaController extends Controller
     public function create()
     {
         //
+        $pizzas = DB::table('pizzas')
+            ->orderBy('name')
+            ->get();
+        return view('pizza.new', ['pizzas' => $pizzas]);
     }
 
     /**
@@ -33,6 +38,15 @@ class PizzaController extends Controller
     public function store(Request $request)
     {
         //
+        $pizza = new Pizza();
+        $pizza->name = $request->name;
+        $pizza->id = $request->id;
+        $pizza->save();
+
+        $pizzas = Pizza::select('pizzas.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('pizza.index',['pizzas' => $pizzas]);
     }
 
     /**
