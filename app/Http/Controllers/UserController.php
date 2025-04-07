@@ -64,6 +64,12 @@ class UserController extends Controller
     public function edit(string $id)
     {
         //
+        $user = User::find($id);
+
+        $users = DB::table('user')
+            ->orderBy('id')
+            ->get();
+        return view('user.edit',['user'=>$user]);
     }
 
     /**
@@ -72,6 +78,17 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->role = $request->role;
+        $user->save();
+
+        $users = User::select('user.*')-> paginate(10);
+        //$pizzas = DB::table('pizzas')
+        //    ->get();
+        return view('user.index',['users' => $users]);
     }
 
     /**
