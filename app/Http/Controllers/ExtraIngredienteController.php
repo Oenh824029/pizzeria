@@ -62,6 +62,12 @@ class ExtraIngredienteController extends Controller
     public function edit(string $id)
     {
         //
+        $extraIngredient = ExtraIngredient::find($id);
+
+        $extraIngredients = DB::table('extra_ingredients')
+            ->orderBy('id')
+            ->get();
+        return view('extra_ingredient.edit',['extraIngredient'=>$extraIngredient]);
     }
 
     /**
@@ -70,6 +76,15 @@ class ExtraIngredienteController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $extraIngredient = ExtraIngredient::find($id);
+        $extraIngredient->name = $request->name;
+        $extraIngredient->price = $request->price;
+        $extraIngredient->save();
+
+        $extraIngredients = ExtraIngredient::select('extra_ingredients.*')-> paginate(10);
+        //$pizzas = DB::table('pizzas')
+        //    ->get();
+        return view('extra_ingredient.index',['extraIngredients' => $extraIngredients]);
     }
 
     /**

@@ -33,3 +33,5 @@ Route::get('/extra_ingredients',[ExtraIngredienteController::class, 'index'])->n
 Route::post('/extra_ingredients',[ExtraIngredienteController::class,'store'])->name('extra_ingredients.store');
 Route::get('/extra_ingredients/create',[ExtraIngredienteController::class, 'create'])->name('extra_ingredients.create');
 Route::delete('/extra_ingredients/{extraIngredient}',[ExtraIngredienteController::class, 'destroy'])->name('extra_ingredients.destroy');
+Route::put('/extra_ingredients/{extraIngredient}',[ExtraIngredienteController::class, 'update'])->name('extra_ingredients.update');
+Route::get('/extra_ingredients/{extraIngredient}/edit',[ExtraIngredienteController::class, 'edit'])->name('extra_ingredients.edit');
