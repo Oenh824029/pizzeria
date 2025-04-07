@@ -24,6 +24,10 @@ class BranchController extends Controller
     public function create()
     {
         //
+        $branches = DB::table('branches')
+            ->orderBy('name')
+            ->get();
+        return view('branch.new', ['branches' => $branches]);
     }
 
     /**
@@ -32,6 +36,16 @@ class BranchController extends Controller
     public function store(Request $request)
     {
         //
+        $branch = new Branch();
+        $branch->name = $request->name;
+        $branch->address = $request->address;
+        $branch->id = $request->id;
+        $branch->save();
+
+        $branches = Branch::select('branches.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('branch.index',['branches' => $branches]);
     }
 
     /**
