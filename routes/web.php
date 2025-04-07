@@ -41,3 +41,4 @@ Route::get('/extra_ingredients/{extraIngredient}/edit',[ExtraIngredienteControll
 Route::get('/branches',[BranchController::class, 'index'])->name('branches.index');
 Route::post('/branches',[BranchController::class,'store'])->name('branches.store');
 Route::get('/branches/create',[BranchController::class, 'create'])->name('branches.create');
+Route::delete('/branches/{branch}',[BranchController::class, 'destroy'])->name('branches.destroy');
