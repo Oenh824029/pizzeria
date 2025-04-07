@@ -7,6 +7,7 @@ use App\Http\Controllers\ExtraIngredienteController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\RawMaterialController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -63,5 +64,7 @@ Route::delete('/raw_materials/{rawMaterial}',[RawMaterialController::class, 'des
 Route::put('/raw_materials/{rawMaterial}',[RawMaterialController::class, 'update'])->name('raw_materials.update');
 Route::get('/raw_materials/{rawMaterial}/edit',[RawMaterialController::class, 'edit'])->name('raw_materials.edit');
 
+// ruta de usuarios
+Route::get('/users',[UserController::class, 'index'])->name('users.index');
 
 

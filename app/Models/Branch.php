@@ -11,5 +11,5 @@ class Branch extends Model
     use HasFactory;
     protected $table = 'branches';
     protected $primary_key = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 }
