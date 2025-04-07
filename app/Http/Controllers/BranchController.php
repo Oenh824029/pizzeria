@@ -62,6 +62,12 @@ class BranchController extends Controller
     public function edit(string $id)
     {
         //
+        $branch = Branch::find($id);
+
+        $branches = DB::table('branches')
+            ->orderBy('id')
+            ->get();
+        return view('branch.edit',['branch'=>$branch]);
     }
 
     /**
@@ -70,6 +76,15 @@ class BranchController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $branch = Branch::find($id);
+        $branch->name = $request->name;
+        $branch->address = $request->address;
+        $branch->save();
+
+        $branches = Branch::select('branches.*')-> paginate(10);
+        //$pizzas = DB::table('pizzas')
+        //    ->get();
+        return view('branch.index',['branches' => $branches]);
     }
 
     /**

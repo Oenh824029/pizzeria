@@ -56,6 +56,10 @@
             </td>
 
             <td>
+                <a href=" {{ route('branches.edit', ['branch' => $branch->id]) }} " 
+                class="btn btn-info">
+                    <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
 
                 <form action=" {{ route('branches.destroy',['branch'=>$branch->id]) }} "
                     method="POST" style="display: inline-block">
