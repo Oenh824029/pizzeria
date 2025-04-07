@@ -57,3 +57,7 @@ Route::get('/suppliers/{supplier}/edit',[SupplierController::class, 'edit'])->na
 
 // rutas de materias primas
 Route::get('/raw_materials',[RawMaterialController::class, 'index'])->name('raw_materials.index');
+Route::post('/raw_materials',[RawMaterialController::class,'store'])->name('raw_materials.store');
+Route::get('/raw_materials/create',[RawMaterialController::class, 'create'])->name('raw_materials.create');
+
+

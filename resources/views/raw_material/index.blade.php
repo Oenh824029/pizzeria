@@ -15,6 +15,9 @@
   <div class="container">
     <h1> Listado de Materias Primas </h1>
 
+    <a href=" {{ route('raw_materials.create') }} " class="btn btn-success">
+    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Materias Primas
+  </a>
   </div>
    
 <hr>
