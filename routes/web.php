@@ -5,6 +5,7 @@ use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\ExtraIngredienteController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -44,3 +45,6 @@ Route::get('/branches/create',[BranchController::class, 'create'])->name('branch
 Route::delete('/branches/{branch}',[BranchController::class, 'destroy'])->name('branches.destroy');
 Route::put('/branches/{branch}',[BranchController::class, 'update'])->name('branches.update');
 Route::get('/branches/{branch}/edit',[BranchController::class, 'edit'])->name('branches.edit');
+
+// rutas de proveedores
+Route::get('/suppliers',[SupplierController::class, 'index'])->name('suppliers.index');
