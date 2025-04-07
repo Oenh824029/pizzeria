@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre Ingrediente Extra</label>
                 <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" placeholder="Nombre Ingrediente Extra">
-                <div id="nameHelp" class="form-text">Nombre Pizza</div>
+                <div id="nameHelp" class="form-text">Nombre Ingreidente Extra</div>
             </div>
 
             <div class="mb-3">
