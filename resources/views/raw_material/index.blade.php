@@ -61,6 +61,11 @@
             </td>
 
             <td>
+                <a href=" {{ route('raw_materials.edit', ['rawMaterial' => $rawMaterial->id]) }} " 
+                class="btn btn-info">
+                    <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
+
                 <form action=" {{ route('raw_materials.destroy',['rawMaterial'=>$rawMaterial->id]) }} "
                 method="POST" style="display: inline-block">
                 @method('delete')

@@ -68,6 +68,7 @@ class ExtraIngredienteController extends Controller
             ->orderBy('id')
             ->get();
         return view('extra_ingredient.edit',['extraIngredient'=>$extraIngredient]);
+        
     }
 
     /**
