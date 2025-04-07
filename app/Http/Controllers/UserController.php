@@ -80,5 +80,12 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+
+        $users = User::select('user.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('user.index',['users' => $users]);
     }
 }
