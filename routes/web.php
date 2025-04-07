@@ -50,3 +50,4 @@ Route::get('/branches/{branch}/edit',[BranchController::class, 'edit'])->name('b
 Route::get('/suppliers',[SupplierController::class, 'index'])->name('suppliers.index');
 Route::post('/suppliers',[SupplierController::class,'store'])->name('suppliers.store');
 Route::get('/suppliers/create',[SupplierController::class, 'create'])->name('suppliers.create');
+Route::delete('/suppliers/{supplier}',[SupplierController::class, 'destroy'])->name('suppliers.destroy');
