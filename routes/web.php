@@ -30,3 +30,5 @@ Route::get('/ingredients/{ingredient}/edit',[IngredientsController::class, 'edit
 
 // rutas de extra ingredientes
 Route::get('/extra_ingredients',[ExtraIngredienteController::class, 'index'])->name('extra_ingredients.index');
+Route::post('/extra_ingredients',[ExtraIngredienteController::class,'store'])->name('extra_ingredients.store');
+Route::get('/extra_ingredients/create',[ExtraIngredienteController::class, 'create'])->name('extra_ingredients.create');

@@ -24,6 +24,10 @@ class ExtraIngredienteController extends Controller
     public function create()
     {
         //
+        $extraIngredients = DB::table('extra_ingredients')
+            ->orderBy('name')
+            ->get();
+        return view('extra_ingredient.new', ['extraIngredients' => $extraIngredients]);
     }
 
     /**
@@ -32,6 +36,16 @@ class ExtraIngredienteController extends Controller
     public function store(Request $request)
     {
         //
+        $extraIngredient = new ExtraIngredient();
+        $extraIngredient->name = $request->name;
+        $extraIngredient->id = $request->id;
+        $extraIngredient->price = $request->price;
+        $extraIngredient->save();
+
+        $extraIngredients = ExtraIngredient::select('extra_ingredients.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('extra_ingredient.index',['extraIngredients' => $extraIngredients]);
     }
 
     /**

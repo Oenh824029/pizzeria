@@ -15,7 +15,7 @@
   <div class="container">
   <h1> Listado de Ingredientes </h1>
   <a href=" {{ route('ingredients.create') }} " class="btn btn-success">
-    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Pizza
+    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Ingrediente
   </a>
   </div>
    
