@@ -8,6 +8,8 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\RawMaterialController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClientController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -72,4 +74,6 @@ Route::delete('/users/{user}',[UserController::class, 'destroy'])->name('users.d
 Route::put('/users/{user}',[UserController::class, 'update'])->name('users.update');
 Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
 
+// rutas de clientes
+Route::get('/clients',[ClientController::class, 'index'])->name('clients.index');
 
