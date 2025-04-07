@@ -24,6 +24,10 @@ class UserController extends Controller
     public function create()
     {
         //
+        $users = DB::table('user')
+            ->orderBy('name')
+            ->get();
+        return view('user.new', ['users' => $users]);
     }
 
     /**
@@ -32,6 +36,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->role = $request->role;
+        $user->id = $request->id;
+        $user->save();
+
+        $users = User::select('user.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('user.index',['users' => $users]);
     }
 
     /**

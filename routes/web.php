@@ -66,5 +66,7 @@ Route::get('/raw_materials/{rawMaterial}/edit',[RawMaterialController::class, 'e
 
 // ruta de usuarios
 Route::get('/users',[UserController::class, 'index'])->name('users.index');
+Route::post('/users',[UserController::class,'store'])->name('users.store');
+Route::get('/users/create',[UserController::class, 'create'])->name('users.create');
 
 
