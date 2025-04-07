@@ -62,6 +62,12 @@ class SupplierController extends Controller
     public function edit(string $id)
     {
         //
+        $supplier = Suppliers::find($id);
+
+        $suppliers = DB::table('suppliers')
+            ->orderBy('id')
+            ->get();
+        return view('supplier.edit',['supplier'=>$supplier]);
     }
 
     /**
@@ -70,6 +76,15 @@ class SupplierController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $supplier = Suppliers::find($id);
+        $supplier->name = $request->name;
+        $supplier->contact_info = $request->contact;
+        $supplier->save();
+
+        $suppliers = Suppliers::select('suppliers.*')-> paginate(10);
+        //$pizzas = DB::table('pizzas')
+        //    ->get();
+        return view('supplier.index',['suppliers' => $suppliers]);
     }
 
     /**

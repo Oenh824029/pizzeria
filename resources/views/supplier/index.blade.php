@@ -56,7 +56,11 @@
             </td>
 
             <td>
-               
+                <a href=" {{ route('suppliers.edit', ['supplier' => $supplier->id]) }} " 
+                class="btn btn-info">
+                    <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
+
                 <form action=" {{ route('suppliers.destroy',['supplier'=>$supplier->id]) }} "
                     method="POST" style="display: inline-block">
                     @method('delete')
