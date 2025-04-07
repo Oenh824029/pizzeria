@@ -6,6 +6,7 @@ use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\ExtraIngredienteController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\RawMaterialController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -53,3 +54,6 @@ Route::get('/suppliers/create',[SupplierController::class, 'create'])->name('sup
 Route::delete('/suppliers/{supplier}',[SupplierController::class, 'destroy'])->name('suppliers.destroy');
 Route::put('/suppliers/{supplier}',[SupplierController::class, 'update'])->name('suppliers.update');
 Route::get('/suppliers/{supplier}/edit',[SupplierController::class, 'edit'])->name('suppliers.edit');
+
+// rutas de materias primas
+Route::get('/raw_materials',[RawMaterialController::class, 'index'])->name('raw_materials.index');
