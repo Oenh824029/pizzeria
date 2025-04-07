@@ -59,5 +59,6 @@ Route::get('/suppliers/{supplier}/edit',[SupplierController::class, 'edit'])->na
 Route::get('/raw_materials',[RawMaterialController::class, 'index'])->name('raw_materials.index');
 Route::post('/raw_materials',[RawMaterialController::class,'store'])->name('raw_materials.store');
 Route::get('/raw_materials/create',[RawMaterialController::class, 'create'])->name('raw_materials.create');
+Route::delete('/raw_materials/{rawMaterial}',[RawMaterialController::class, 'destroy'])->name('raw_materials.destroy');
 
 

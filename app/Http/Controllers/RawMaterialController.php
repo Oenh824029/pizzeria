@@ -76,5 +76,12 @@ class RawMaterialController extends Controller
     public function destroy(string $id)
     {
         //
+        $rawMaterial = RawMaterial::find($id);
+        $rawMaterial->delete();
+
+        $rawMaterials = RawMaterial::select('raw_materials.*')-> paginate(10);
+           // ->select('pizzas.*')
+           // ->get();
+        return view('raw_material.index',['rawMaterials' => $rawMaterials]);
     }
 }
