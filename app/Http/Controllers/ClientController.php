@@ -31,6 +31,7 @@ class ClientController extends Controller
     {
         //
         $users = DB::table('user')
+            ->where('user.role','cliente')
             ->orderBy('name')
             ->get();
         return view('client.new', ['users' => $users]);

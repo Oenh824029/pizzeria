@@ -45,13 +45,13 @@
                 {{ $employee->id }}
             </th>
             <td>
-                {{ $employee-> user_id }}
+                {{ $employee-> name }}
             </td>
             <td>
                 {{ $employee-> position }}
             </td>
             <td>
-                {{ $employee-> identification_number }}
+                {{ $employee-> identification }}
             </td>
 
             <td>

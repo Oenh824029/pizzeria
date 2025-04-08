@@ -14,11 +14,10 @@ class EmployeeController extends Controller
     public function index()
     {
         //
-        /*$employees = DB::table('employees')
-            ->join('user','clients.user_id', '=', 'user.id')
-            ->select('clients.*', 'user.name', 'user.email', 'user.role')
-            ->paginate(10);*/
-            $employees = Employee::paginate(10);
+        $employees = DB::table('employees')
+            ->join('user','employees.user_id', '=', 'user.id')
+            ->select('employees.*', 'user.name', 'user.email', 'user.role')
+            ->paginate(10);
         return view('employee.index',['employees'=>$employees]);
     }
 
