@@ -96,6 +96,7 @@ Route::get('/employees/{employee}/edit',[EmployeeController::class, 'edit'])->na
 Route::get('/pizza_sizes',[PizzaSizeControlller::class, 'index'])->name('pizza_sizes.index');
 Route::post('/pizza_sizes',[PizzaSizeControlller::class,'store'])->name('pizza_sizes.store');
 Route::get('/pizza_sizes/create',[PizzaSizeControlller::class, 'create'])->name('pizza_sizes.create');
+Route::delete('/pizza_sizes/{pizzaSize}',[PizzaSizeControlller::class, 'destroy'])->name('pizza_sizes.destroy');
 
 
 
