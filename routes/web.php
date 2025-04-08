@@ -12,6 +12,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PizzaSizeControlller;
 use App\Http\Controllers\PizzaIngredientController;
+use App\Http\Controllers\OrderController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -108,6 +109,11 @@ Route::get('/pizza_ingredients/create',[PizzaIngredientController::class, 'creat
 Route::delete('/pizza_ingredients/{pizzaIngredient}',[PizzaIngredientController::class, 'destroy'])->name('pizza_ingredients.destroy');
 Route::put('/pizza_ingredients/{pizzaIngredient}',[PizzaIngredientController::class, 'update'])->name('pizza_ingredients.update');
 Route::get('/pizza_ingredients/{pizzaIngredient}/edit',[PizzaIngredientController::class, 'edit'])->name('pizza_ingredients.edit');
+
+// rutas de ordenes
+Route::get('/orders',[OrderController::class, 'index'])->name('orders.index');
+
+
 
 
 
