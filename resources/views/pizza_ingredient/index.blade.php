@@ -61,6 +61,11 @@
 
             <td>
 
+                <a href=" {{ route('pizza_ingredients.edit', ['pizzaIngredient' => $pizzaIngredient->id]) }} " 
+                class="btn btn-info">
+                <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
+
                 <form action=" {{ route('pizza_ingredients.destroy',['pizzaIngredient'=>$pizzaIngredient->id]) }} "
                 method="POST" style="display: inline-block">
                 @method('delete')

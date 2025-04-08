@@ -106,5 +106,14 @@ Route::get('/pizza_ingredients',[PizzaIngredientController::class, 'index'])->na
 Route::post('/pizza_ingredients',[PizzaIngredientController::class,'store'])->name('pizza_ingredients.store');
 Route::get('/pizza_ingredients/create',[PizzaIngredientController::class, 'create'])->name('pizza_ingredients.create');
 Route::delete('/pizza_ingredients/{pizzaIngredient}',[PizzaIngredientController::class, 'destroy'])->name('pizza_ingredients.destroy');
+Route::put('/pizza_ingredients/{pizzaIngredient}',[PizzaIngredientController::class, 'update'])->name('pizza_ingredients.update');
+Route::get('/pizza_ingredients/{pizzaIngredient}/edit',[PizzaIngredientController::class, 'edit'])->name('pizza_ingredients.edit');
+
+
+
+
+
+
+
 
 
