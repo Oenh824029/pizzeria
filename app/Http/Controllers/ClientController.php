@@ -30,6 +30,10 @@ class ClientController extends Controller
     public function create()
     {
         //
+        $users = DB::table('user')
+            ->orderBy('name')
+            ->get();
+        return view('client.new', ['users' => $users]);
     }
 
     /**
@@ -38,6 +42,18 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
+        $client = new Client();
+        $client->id = $request->id;
+        $client->addres = $request->addres;
+        $client->phone = $request->phone;
+        $client->user_id = $request->code;
+        $client->save();
+
+        $clients = DB::table('clients')
+            ->join('user','clients.user_id', '=', 'user.id')
+            ->select('clients.*', 'user.name', 'user.email', 'user.role')
+            ->paginate(10);
+        return view('client.index',['clients'=>$clients]);
     }
 
     /**
