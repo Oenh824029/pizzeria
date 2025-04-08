@@ -15,8 +15,8 @@ class PizzaSizeControlller extends Controller
     {
         //
         $pizzaSizes = DB::table('pizza_size')
-            //->join('user','clients.user_id', '=', 'user.id')
-            //->select('clients.*', 'user.name', 'user.email', 'user.role')
+            ->join('pizzas','pizza_size.pizza_id', '=', 'pizzas.id')
+            ->select('pizza_size.*', 'pizzas.name')
             ->paginate(10);
         return view('pizza_size.index',['pizzaSizes'=>$pizzaSizes]);
     }

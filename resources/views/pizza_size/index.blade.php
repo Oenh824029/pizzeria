@@ -51,7 +51,7 @@
                 {{ $pizzaSize-> price }}
             </td>
             <td>
-                {{ $pizzaSize-> pizza_id }}
+                {{ $pizzaSize-> name }}
             </td>
 
             <td>
