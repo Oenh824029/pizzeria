@@ -16,6 +16,10 @@
   <div class="container">
   <h1> Listado de Tamaño de Pizzas </h1>
 
+  <a href=" {{ route('pizza_sizes.create') }} " class="btn btn-success">
+    <img src=" {{ asset('icons/agregar.png') }} " alt="agregar" width="26" height="26"> Tamaño Pizza
+  </a>
+
   </div>
    
 <hr>
