@@ -85,6 +85,6 @@ Route::get('/clients/{client}/edit',[ClientController::class, 'edit'])->name('cl
 
 // rutas de empleados 
 Route::get('/employees',[EmployeeController::class, 'index'])->name('employees.index');
-
-
+Route::post('/employees',[EmployeeController::class,'store'])->name('employees.store');
+Route::get('/employees/create',[EmployeeController::class, 'create'])->name('employees.create');
 
