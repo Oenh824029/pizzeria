@@ -78,6 +78,11 @@
 
             <td>
                
+                <a href=" {{ route('clients.edit', ['client' => $client->id]) }} " 
+                class="btn btn-info">
+                <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
+
                 <form action=" {{ route('clients.destroy',['client'=>$client->id]) }} "
                 method="POST" style="display: inline-block">
                 @method('delete')
