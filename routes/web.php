@@ -97,6 +97,8 @@ Route::get('/pizza_sizes',[PizzaSizeControlller::class, 'index'])->name('pizza_s
 Route::post('/pizza_sizes',[PizzaSizeControlller::class,'store'])->name('pizza_sizes.store');
 Route::get('/pizza_sizes/create',[PizzaSizeControlller::class, 'create'])->name('pizza_sizes.create');
 Route::delete('/pizza_sizes/{pizzaSize}',[PizzaSizeControlller::class, 'destroy'])->name('pizza_sizes.destroy');
+Route::put('/pizza_sizes/{pizzaSize}',[PizzaSizeControlller::class, 'update'])->name('pizza_sizes.update');
+Route::get('/pizza_sizes/{pizzaSize}/edit',[PizzaSizeControlller::class, 'edit'])->name('pizza_sizes.edit');
 
 
 
