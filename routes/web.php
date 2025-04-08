@@ -78,4 +78,7 @@ Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.ed
 Route::get('/clients',[ClientController::class, 'index'])->name('clients.index');
 Route::post('/clients',[ClientController::class,'store'])->name('clients.store');
 Route::get('/clients/create',[ClientController::class, 'create'])->name('clients.create');
+Route::delete('/clients/{client}',[ClientController::class, 'destroy'])->name('clients.destroy');
+
+
 
