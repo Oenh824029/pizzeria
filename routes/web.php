@@ -9,6 +9,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\RawMaterialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EmployeeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -81,5 +82,9 @@ Route::get('/clients/create',[ClientController::class, 'create'])->name('clients
 Route::delete('/clients/{client}',[ClientController::class, 'destroy'])->name('clients.destroy');
 Route::put('/clients/{client}',[ClientController::class, 'update'])->name('clients.update');
 Route::get('/clients/{client}/edit',[ClientController::class, 'edit'])->name('clients.edit');
+
+// rutas de empleados 
+Route::get('/employees',[EmployeeController::class, 'index'])->name('employees.index');
+
 
 
