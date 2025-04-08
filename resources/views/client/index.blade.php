@@ -30,6 +30,9 @@
         <th scope="col">Dirección</th>
         <th scope="col">Teléfono</th>
         <th scope="col">Usuario</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
         <th scope="col">Fecha Creación</th>
         <th scope="col">Fecha Actualización</th>
         </tr>
@@ -42,21 +45,35 @@
                 {{ $client->id }}
             </th>
             <td>
-                {{ $client-> address }}
+                {{ $client-> addres }}
             </td>
             <td>
                 {{ $client-> phone }}
             </td>
             <td>
-                {{ $client-> usuario_id }}
+                {{ $client-> user_id }}
+            </td>
+
+            <td>
+                {{ $client-> name }}
+            </td>
+
+            <td>
+                {{ $client -> email }}
+            </td>
+
+            <td>
+                {{ $client -> role }}
             </td>
 
             <td>
                 {{ $client -> created_at}}
             </td>
+
             <td>
                 {{ $client -> updated_at }}
             </td>
+
             <td>
                
             </td>

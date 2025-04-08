@@ -14,7 +14,13 @@ class ClientController extends Controller
     public function index()
     {
         //
-        $clients = Client::paginate(10);
+        /*$clients = Client::paginate(10);
+        return view('client.index',['clients'=>$clients]);
+        */
+        $clients = DB::table('clients')
+            ->join('user','clients.user_id', '=', 'user.id')
+            ->select('clients.*', 'user.name', 'user.email', 'user.role')
+            ->paginate(10);
         return view('client.index',['clients'=>$clients]);
     }
 
