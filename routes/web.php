@@ -10,6 +10,7 @@ use App\Http\Controllers\RawMaterialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\PizzaSizeControlller;
 
 use Illuminate\Support\Facades\Route;
 
@@ -90,6 +91,10 @@ Route::get('/employees/create',[EmployeeController::class, 'create'])->name('emp
 Route::delete('/employees/{employee}',[EmployeeController::class, 'destroy'])->name('employees.destroy');
 Route::put('/employees/{employee}',[EmployeeController::class, 'update'])->name('employees.update');
 Route::get('/employees/{employee}/edit',[EmployeeController::class, 'edit'])->name('employees.edit');
+
+// rutas de pizza size
+Route::get('/pizza_sizes',[PizzaSizeControlller::class, 'index'])->name('pizza_sizes.index');
+
 
 
 
