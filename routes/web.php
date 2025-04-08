@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PizzaSizeControlller;
+use App\Http\Controllers\PizzaIngredientController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -100,6 +101,8 @@ Route::delete('/pizza_sizes/{pizzaSize}',[PizzaSizeControlller::class, 'destroy'
 Route::put('/pizza_sizes/{pizzaSize}',[PizzaSizeControlller::class, 'update'])->name('pizza_sizes.update');
 Route::get('/pizza_sizes/{pizzaSize}/edit',[PizzaSizeControlller::class, 'edit'])->name('pizza_sizes.edit');
 
+// rutas de pizza ingredients
+Route::get('/pizza_ingredients',[PizzaIngredientController::class, 'index'])->name('pizza_ingredients.index');
 
 
 
