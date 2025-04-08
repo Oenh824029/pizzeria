@@ -103,6 +103,8 @@ Route::get('/pizza_sizes/{pizzaSize}/edit',[PizzaSizeControlller::class, 'edit']
 
 // rutas de pizza ingredients
 Route::get('/pizza_ingredients',[PizzaIngredientController::class, 'index'])->name('pizza_ingredients.index');
+Route::post('/pizza_ingredients',[PizzaIngredientController::class,'store'])->name('pizza_ingredients.store');
+Route::get('/pizza_ingredients/create',[PizzaIngredientController::class, 'create'])->name('pizza_ingredients.create');
 
 
 

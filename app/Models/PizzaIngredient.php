@@ -9,7 +9,7 @@ class PizzaIngredient extends Model
 {
     //
     use HasFactory;
-    protected $table = 'pizza_ingredient';
+    protected $table = 'pizza_ingredients';
     protected $primary_key = 'id';
     public $timestamps = true;
 }
