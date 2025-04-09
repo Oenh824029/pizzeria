@@ -13,6 +13,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PizzaSizeControlller;
 use App\Http\Controllers\PizzaIngredientController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderPizzaController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -118,7 +119,8 @@ Route::delete('/orders/{order}',[OrderController::class, 'destroy'])->name('orde
 Route::put('/orders/{order}',[OrderController::class, 'update'])->name('orders.update');
 Route::get('/orders/{order}/edit',[OrderController::class, 'edit'])->name('orders.edit');
 
-
+// rutas de las ordenes de las pizzas
+Route::get('/order_pizzas',[OrderPizzaController::class, 'index'])->name('order_pizzas.index');
 
 
 
