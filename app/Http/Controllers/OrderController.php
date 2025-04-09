@@ -33,6 +33,23 @@ class OrderController extends Controller
     public function create()
     {
         //
+        $clients = DB::table('user')
+            ->where('user.role','cliente')
+            ->orderBy('id')
+            ->get();
+
+        $branches = DB::table('branches')
+            ->orderBy('id')
+            ->get();
+
+        $deliveryPersons = DB::table('user')
+            ->where('user.role','empleado')
+            ->orderBy('id')
+            ->get();
+
+        return view('order.new',['clients'=>$clients, 
+        'branches'=>$branches,
+        'deliveryPersons'=>$deliveryPersons]);
     }
 
     /**
@@ -41,6 +58,27 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
+        $order = new Order();
+        $order->id = $request->id;
+        $order->client_id = $request-> codeClient;
+        $order->branch_id = $request-> codeBranch;
+        $order->total_price = $request ->price;
+        $order->status = $request->status;
+        $order->delivery_type = $request->delivery_type;
+        $order->delivery_person_id = $request->codeDelivery;
+        $order->save();
+
+        $orders = DB::table('orders')
+            ->join('clients', 'orders.client_id','=', 'clients.id')
+            ->join('user','clients.user_id','=', 'user.id')
+            ->join('branches', 'orders.branch_id','=', 'branches.id')
+            ->join('employees', 'orders.delivery_person_id','=', 'employees.id')
+            ->join('user as u2','employees.user_id', '=','u2.id')
+            ->select('orders.*', 'user.name as name_client', 'branches.name as name_branch', 'branches.address as branch_address',
+            'u2.name as name_employee')
+            ->paginate(10);
+        return view('order.index', ['orders'=>$orders]);
+
     }
 
     /**
