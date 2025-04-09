@@ -121,8 +121,8 @@ Route::get('/orders/{order}/edit',[OrderController::class, 'edit'])->name('order
 
 // rutas de las ordenes de las pizzas
 Route::get('/order_pizzas',[OrderPizzaController::class, 'index'])->name('order_pizzas.index');
-
-
+Route::post('/order_pizzas',[OrderPizzaController::class,'store'])->name('order_pizzas.store');
+Route::get('/order_pizzas/create',[OrderPizzaController::class, 'create'])->name('order_pizzas.create');
 
 
 
