@@ -27,12 +27,12 @@
     <thead>
         <tr>
         <th scope="col">ID</th>
-        <th scope="col">Client ID</th>
-        <th scope="col">Branch ID</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Sucursal</th>
         <th scope="col">Total Price</th>
         <th scope="col">Estado</th>
         <th scope="col">Tipo Domicilio</th>
-        <th scope="col">Delivery Person</th>
+        <th scope="col">Repartidor</th>
         <th scope="col">Fecha Creación</th>
         <th scope="col">Fecha Actualización</th>
         </tr>
@@ -44,11 +44,13 @@
             <th>
                 {{ $order->id }}
             </th>
+
             <td>
-                {{ $order-> client_id }}
+                {{ $order -> name_client }}
             </td>
+
             <td>
-                {{ $order -> branch_id }}
+                {{ $order ->  name_branch }}
             </td>
             <td>
                 {{ $order -> total_price }}
@@ -63,7 +65,7 @@
             </td>
 
             <td>
-                {{ $order -> delivery_person_id }}
+                {{ $order -> name_employee }}
             </td>
 
             <td>
