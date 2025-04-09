@@ -81,6 +81,10 @@
             </td>
 
             <td>
+                <a href=" {{ route('orders.edit', ['order' => $order->id]) }} " 
+                class="btn btn-info">
+                <img src=" {{ asset('icons/actualizar.png') }}" alt="actualizar" width="26" height="26"> </button>
+                </a>
 
                 <form action=" {{ route('orders.destroy',['order'=>$order->id]) }} "
                 method="POST" style="display: inline-block">
