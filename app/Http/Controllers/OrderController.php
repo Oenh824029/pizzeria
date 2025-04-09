@@ -111,5 +111,18 @@ class OrderController extends Controller
     public function destroy(string $id)
     {
         //
+        $order = Order::find($id);
+        $order->delete();
+
+        $orders = DB::table('orders')
+            ->join('clients', 'orders.client_id','=', 'clients.id')
+            ->join('user','clients.user_id','=', 'user.id')
+            ->join('branches', 'orders.branch_id','=', 'branches.id')
+            ->join('employees', 'orders.delivery_person_id','=', 'employees.id')
+            ->join('user as u2','employees.user_id', '=','u2.id')
+            ->select('orders.*', 'user.name as name_client', 'branches.name as name_branch', 'branches.address as branch_address',
+            'u2.name as name_employee')
+            ->paginate(10);
+        return view('order.index', ['orders'=>$orders]);
     }
 }
