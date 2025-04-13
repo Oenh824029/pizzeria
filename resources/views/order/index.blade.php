@@ -12,6 +12,9 @@
   </head>
   <body>
 
+  <!-- llama al menu -->
+  @include('layouts.menu')
+
   <div class="container">
      <h1> Listado de Ordenes </h1>
 

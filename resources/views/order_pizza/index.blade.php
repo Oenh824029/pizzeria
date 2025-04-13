@@ -12,6 +12,9 @@
   </head>
   <body>
 
+  <!-- llama al menu -->
+  @include('layouts.menu')
+
   <div class="container">
   <h1> Listado de Orden Pizza </h1>
   <a href=" {{ route('order_pizzas.create') }} " class="btn btn-success">

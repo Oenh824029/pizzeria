@@ -39,7 +39,7 @@
             <select class="form-select" name="codePizzaSize" id="codePizzaSize" required>
                 <option selected disabled value="">Seleccione una Pizza Size</option>
                 @foreach( $pizzaSizes as $pizzaSize)
-                    <option value=" {{ $pizzaSize->id }} "> {{ $pizzaSize->size }} </option>
+                    <option value=" {{ $pizzaSize->id }} "> {{ $pizzaSize ->size }} </option>
                 @endforeach
             </select>
 

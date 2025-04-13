@@ -13,6 +13,9 @@
   </head>
   <body>
 
+  <!-- llama al menu -->
+  @include('layouts.menu')
+
   <div class="container">
   <h1> Listado de Empleados </h1>
   <a href=" {{ route('employees.create') }} " class="btn btn-success">

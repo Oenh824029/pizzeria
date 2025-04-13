@@ -12,6 +12,9 @@
   </head>
   <body>
 
+  <!-- llama al menu -->
+  @include('layouts.menu')
+
   <div class="container">
   <h1> Listado de Ingredientes Extra </h1>
   <a href=" {{ route('extra_ingredients.create') }} " class="btn btn-success">

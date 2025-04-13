@@ -12,6 +12,9 @@
   </head>
   <body>
 
+  <!-- llama al menu -->
+@include('layouts.menu')
+
   <div class="container">
     <h1> Listado de Proveedores </h1>
     <a href=" {{ route('suppliers.create') }} " class="btn btn-success">
